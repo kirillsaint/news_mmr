@@ -25,6 +25,17 @@ class AdminController {
 
         return response.redirect('/admin/dashboard/posts')
     }
+    async deletePost({ params, response }) {
+        if (!params.id) {
+            return response.badRequest('Произошла ошибка, попробуйте позже.');
+        }
+        const post = await Post.find(params.id)
+
+        if(!post) return response.redirect('/')
+
+        await post.delete();
+       return response.redirect('/admin/dashboard/posts')
+    }
 }
 
 module.exports = AdminController
