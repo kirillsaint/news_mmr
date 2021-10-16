@@ -1,0 +1,31 @@
+@layout('layouts/admin')
+@section('body')
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">Все посты</h1><br>
+  <div class="col-lg-6 mx-auto">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Текст</th>
+
+        <th scope="col">Действия</th>
+      </tr>
+      </thead>
+      <tbody>
+      @each(post in posts)
+      <tr>
+        <th scope="row">{{ post.id }}</th>
+        <th>{{ post.title }}</th>
+        <th>{{ post.text }}</th>
+        <th>
+
+        </th>
+      </tr>
+      @endeach
+      </tbody>
+    </table>
+  </div>
+</div>
+@endsection

@@ -1,0 +1,20 @@
+@layout('layouts/admin')
+@section('body')
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">Создание нового поста</h1>
+  <div class="col-lg-6 mx-auto">
+    <form class="p-5 border rounded-3 bg-light" action="{{ route('create.post') }}" method="post">
+      {{ csrfField() }}
+      <div class="form-floating mb-3">
+        <input type="text" name="title" class="form-control" id="flotingUsername" placeholder="Название" required>
+        <label for="flotingUsername">Название</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" name="text" class="form-control" id="floatingEmail" placeholder="Содержание поста" required>
+        <label for="floatingEmail">Содержание поста</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Создать</button>
+    </form>
+  </div>
+</div>
+@endsection

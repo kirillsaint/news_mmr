@@ -1,0 +1,7 @@
+@layout('layouts/main')
+@section('body')
+<div class="px-4 py-5 my-5 text-center col-lg-8 mx-auto p-3 border rounded-3 bg-light">
+  <h1>{{ post.title }} </h1><p>{{ post.created_at }}</p><br>
+<p>{{ post.text }}</p>
+</div>
+@endsection
