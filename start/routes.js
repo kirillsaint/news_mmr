@@ -27,4 +27,5 @@ Route.group(() => {
     Route.get('/admin/dashboard/posts', 'AdminController.getPosts')
     Route.on('/admin/dashboard/posts/new').render('dashboard/new')
     Route.post('/api/admin/newPost','AdminController.newPost').as('create.post')
+    Route.get('/api/delete/post/:id','AdminController.deletePost').as('delete.post')
 }).middleware(['auth'])
